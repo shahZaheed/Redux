@@ -4,6 +4,7 @@ import { Counter } from './features/Counter';
 import Product from './product/Product';
 import productSlice from './product/productSlice';
 import { useSelector } from 'react-redux';
+import { Graphql } from './graphql/Graphql';
 
 function App() {
   const initialBasketItems = useSelector(state => state.product.items)
@@ -26,6 +27,8 @@ function App() {
           return <Product key={basketItems[item].id} id={basketItems[item].id} name={basketItems[item].name} price={basketItems[item].price} />
         })
       }
+      <h1>Query Lang</h1>
+      <Graphql/>
 
       {/* {
         initialState.items.map((item) => {
